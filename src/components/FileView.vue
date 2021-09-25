@@ -22,14 +22,14 @@ export default {
   height: 30px;
   display: flex;
   align-items: center;
-  border: 1px double rgba(29, 115, 115, 0);
+  border: 1px double rgba(34, 133, 133, 0);
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0);
   transition: background-color 0.2s ease;
 }
 .file:hover{
   color: orangered;
-  border: 1px double rgba(29, 115, 115, 0.3);
+  border: 1px double rgba(28, 133, 133, 0.3);
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0.3);
   cursor: pointer;
