@@ -29,7 +29,7 @@ export default {
 }
 .file:hover{
   color: orangered;
-  border: 1px double rgba(28, 133, 133, 0.3);
+  border: 1px double rgba(20, 126, 126, 0.3);
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0.3);
   cursor: pointer;
