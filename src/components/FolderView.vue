@@ -9,7 +9,7 @@
     viewBox="0 0 512 512">
       <OpenFolderIcon />
     </icon-base>
-   </section>
+  </section>
 
     <section v-if="isFolder">
      <icon-base 
@@ -19,7 +19,7 @@
      iconColor = "#FFE500" 
      viewBox="0 0 512 512">
        <ClosedFolderIcon />
-      </icon-base>
+    </icon-base>
    </section>
 
   <p>{{name}}</p>
@@ -90,7 +90,6 @@ export default {
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0);
   transition: background-color 0.2s ease;
-  border-width: 0 0 1px 1px;
   margin: 0 0 0 1.2em;
 }
 .folder:hover{
@@ -99,14 +98,15 @@ export default {
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0.3);
   cursor: pointer;
-  border-width: 0 0 1px 1px;
   margin: 0 0 0 1.2em;
 }
 .folder_checkbox {
   padding-right: 10px;
+  
 }
 .icon {
   padding-right: 15px;
+  padding-left: 10px;
 }
 
 </style>

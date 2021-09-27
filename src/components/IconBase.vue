@@ -3,10 +3,8 @@
     :width="width" 
     :height="height" 
     :viewBox="viewBox" 
-    
     :aria-labelledby="iconName" 
-    role="presentation"
-  >
+    role="presentation">
     <title :id="iconName" lang="en">{{iconName}} icon</title>
     <g :fill="iconColor">
       <slot />
@@ -34,7 +32,7 @@ export default {
       default: 'currentColor'
     },
     viewBox: {
-      type: Number
+      type: String
     }
   }
 }
