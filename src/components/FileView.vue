@@ -26,6 +26,7 @@ export default {
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0);
   transition: background-color 0.2s ease;
+  padding-left: 10px;
 }
 .file:hover{
   color: orangered;
