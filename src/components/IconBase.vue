@@ -34,7 +34,7 @@ export default {
     viewBox: {
       type: String
     }
-  }
+  },
 }
 </script>
 

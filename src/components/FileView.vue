@@ -11,7 +11,7 @@ export default {
   },
     computed: {
       indent() {
-      return {transform: `translate(${this.depth * 50}px)`}
+      return `margin-left:${this.depth * 50}px`
     }
   }
 }
@@ -26,11 +26,10 @@ export default {
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0);
   transition: background-color 0.2s ease;
-  padding-left: 10px;
 }
 .file:hover{
   color: orangered;
-  border: 1px double rgba(20, 126, 126, 0.3);
+  border: 1px double rgba(28, 133, 133, 0.3);
   border-radius: 5px;
   background-color:rgba(92, 204, 204, 0.3);
   cursor: pointer;

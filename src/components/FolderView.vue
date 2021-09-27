@@ -20,19 +20,15 @@
      viewBox="0 0 512 512">
        <ClosedFolderIcon />
     </icon-base>
-   </section>
-
+  </section>
   <p>{{name}}</p>
-  </div>
-
+</div>
   <template v-for="folder in folders" v-if="showChildren">
     <FolderView :name="folder.name" :folders="folder.folders" :files="folder.files"  :depth="depth + 1" />
   </template>
-
   <template v-for="file in files" v-if="showChildren">
     <FileView :name="file.name" :depth="depth + 1"/>
   </template>
-
 </template>
 
 <script>
@@ -60,9 +56,9 @@ export default {
     },
   computed: {
       indent() {
-      return {transform: `translate(${this.depth * 50}px)`}
+      return `margin-left:${this.depth * 50}px`
     },
-  isFolder: function() {
+      isFolder: function() {
     return this.folders 
     }
   },
@@ -91,6 +87,7 @@ export default {
   background-color:rgba(92, 204, 204, 0);
   transition: background-color 0.2s ease;
   margin: 0 0 0 1.2em;
+
 }
 .folder:hover{
   color: orangered;
