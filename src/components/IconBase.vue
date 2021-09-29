@@ -3,6 +3,7 @@
     :width="width" 
     :height="height" 
     :viewBox="viewBox" 
+    
     :aria-labelledby="iconName" 
     role="presentation">
     <title :id="iconName" lang="en">{{iconName}} icon</title>
@@ -21,20 +22,20 @@ export default {
     },
     width: {
       type: [Number, String],
-      default: 18
+      default: 20
     },
     height: {
       type: [Number, String],
-      default: 18
+      default: 20
     },
     iconColor: {
       type: String,
       default: 'currentColor'
     },
     viewBox: {
-      type: String
+      type: String,
     }
-  },
+  }
 }
 </script>
 

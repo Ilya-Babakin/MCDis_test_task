@@ -2,32 +2,35 @@
 <div class = "folder" :style="indent" @click="toggleChildren">
   <section v-if="isFolder">
     <icon-base 
-    class="icon" 
-    v-if="isOpen" 
-    icon-name="openFolder" 
-    iconColor = "#FFE500" 
-    viewBox="0 0 512 512">
-      <OpenFolderIcon />
+      class="icon" 
+      v-if="isOpen" 
+      icon-name="openFolder" 
+      width="30"
+      height="30"
+      iconColor = "#FFE500" 
+      viewBox="0 0 512 512">
+        <OpenFolderIcon/>
     </icon-base>
   </section>
-
-    <section v-if="isFolder">
+  <section v-if="isFolder">
      <icon-base 
-     class="icon" 
-     v-if="!isOpen"  
-     icon-name="ClosedFolderIcon" 
-     iconColor = "#FFE500" 
-     viewBox="0 0 512 512">
-       <ClosedFolderIcon />
-    </icon-base>
+       class="icon" 
+       v-if="!isOpen"  
+       icon-name="ClosedFolderIcon"
+       width="30"
+       height="30" 
+       iconColor= "#FFE500" 
+       viewBox="0 0 512 512">
+         <ClosedFolderIcon />
+    </icon-base >
   </section>
   <p>{{name}}</p>
-</div>
+ </div>
   <template v-for="folder in folders" v-if="showChildren">
-    <FolderView :name="folder.name" :folders="folder.folders" :files="folder.files"  :depth="depth + 1" />
+    <FolderView :name="folder.name" :folders="folder.folders" :files="folder.files"  :depth="depth + 1"  />
   </template>
   <template v-for="file in files" v-if="showChildren">
-    <FileView :name="file.name" :depth="depth + 1"/>
+    <FileView :name="file.name" :depth="depth + 1" :iconName="file.name.split('.').pop()" :size="file.length"/>
   </template>
 </template>
 
@@ -43,7 +46,7 @@ export default {
     IconBase,
     OpenFolderIcon,
     ClosedFolderIcon
-  },
+    },
   props: {
     name: String,
     folders:Array,
@@ -51,23 +54,24 @@ export default {
     depth: Number
   },
   data() {
-      return { showChildren: false,
-               isOpen: false }
+      return { 
+        showChildren: false,
+        isOpen: false
+        }
     },
   computed: {
       indent() {
       return `margin-left:${this.depth * 50}px`
     },
-      isFolder: function() {
-    return this.folders 
-    }
+    isFolder: function() {
+      return this.folders 
+    },
   },
   methods: {
     toggleChildren() {
       this.showChildren = !this.showChildren;
       this.isOpen = !this.isOpen;
-      }
-
+      },
     }
 }
 </script>
